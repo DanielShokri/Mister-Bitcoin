@@ -1,0 +1,11 @@
+.contact-preview {
+    background-color: #EEE;
+    margin: 25px 89px;
+    text-align: center;
+    width: 200px;
+    cursor: pointer;
+    height: 50px;
+    border-radius: 5px;
+    display: flex;
+}
+

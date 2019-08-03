@@ -1,0 +1,8 @@
+.contacts-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contacts-list img {
+    width: 50px;
+}
