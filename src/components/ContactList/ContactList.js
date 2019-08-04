@@ -20,27 +20,20 @@ class ContactList extends Component {
         this.setState({ contacts });
     }
 
-    contactSelected = (selectedContact) => {
-        console.log(selectedContact);
-        this.setState({ selectedContact });
-    }
-
+    
 
     render() {
         const { contacts } = this.state;
         return (
             <div>
-                <ContactFilter {...this.state} handleChangeTxt={this.handleChangeTxt}></ContactFilter>
-                {!this.state.selectedContact && (
-                    <section className="contacts-list">
-                        {contacts.map((currContact) => (
-                            <ContactPreview contactSelected={this.contactSelected} key={currContact._id} contact={currContact}></ContactPreview>
-                        ))}
-                    </section>
-                )}
-                {this.state.selectedContact && (
-                    <ContactDetails onClose={() => this.setState({ selectedContact: null })} selectedContactId={this.state.selectedContact._id}></ContactDetails>
-                )}
+                <ContactFilter key={0} {...this.state} handleChangeTxt={this.handleChangeTxt}></ContactFilter>
+                <section key={1} className="contacts-list">
+                    {contacts.map((currContact) => (
+                        <ContactPreview contactSelected={this.props.contactSelected}
+                            key={currContact._id} contact={currContact}></ContactPreview>
+                    ))}
+                </section>
+
             </div>
         )
     }

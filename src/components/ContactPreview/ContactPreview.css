@@ -1,11 +1,37 @@
 .contact-preview {
     background-color: #EEE;
-    margin: 25px 89px;
+    margin: 25px 22px;
     text-align: center;
     width: 200px;
     cursor: pointer;
     height: 50px;
     border-radius: 5px;
     display: flex;
+    justify-content: space-between;
 }
 
+.card {
+    position: relative;
+    margin: 1.5rem 50px 1rem 0;
+    background-color: #fff;
+    -webkit-transition: -webkit-box-shadow .25s;
+    transition: -webkit-box-shadow .25s;
+    transition: box-shadow .25s;
+    transition: box-shadow .25s, -webkit-box-shadow .25s;
+    border-radius: 2px;
+}
+
+.card .card-image .card-title {
+    color: #fff;
+    position: static;
+    bottom: 0;
+    left: 0;
+    max-width: 100%;
+    padding: 24px;
+}
+
+.card .card-action:last-child {
+    border-radius: 0 0 2px 2px;
+    display: flex;
+    justify-content: space-around;
+}

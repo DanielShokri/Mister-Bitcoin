@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Link, NavLink, Switch, Redirect } from "react-router-dom";
 import './AppHeader.css';
 
 class AppHeader extends Component {
@@ -7,11 +8,11 @@ class AppHeader extends Component {
         return (
             <header>
                 <div className="header">
-                    <a href="#" className="logo">Mister-Bitcoin</a>
+                    <Link to="/" className="logo">Mister-Bitcoin</Link>
                     <div className="header-right">
-                        <a className="active" href="#">Home</a>
-                        <a href="#contact">Contacts</a>
-                        <a href="#about">Statistics</a>
+                        <Link to="/" className="active" href="#">Home</Link>
+                        <Link to="/contact">Contacts</Link>
+                        <Link to="/statistics">Statistics</Link>
                     </div>
                 </div>
             </header>

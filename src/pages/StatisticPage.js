@@ -15,9 +15,18 @@ class StatisticPage extends Component {
     render() {
         return (
             <div>
-                {this.state.transactions && this.state.marketPrice &&
-                    <Chart {...this.state}></Chart>
+                <h1>Statistic Page</h1>
+                <section className="statistic-page">
+                    {this.state.transactions &&
+                    <Chart data={this.state.transactions}></Chart>
                 }
+                {this.state.marketPrice &&
+                    <Chart data={this.state.marketPrice}
+                    className="confirmed-transactions"
+                     title="Confirmed transactions in the past 24 hours"
+                     color={"#49beb7"}></Chart>}
+          
+          </section>
             </div>
         )
     }

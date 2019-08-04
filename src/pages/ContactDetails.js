@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
 import ContactService from '../services/ContactService'
+import { HashRouter  as Router, Route, Link, NavLink, Switch, Redirect } from "react-router-dom";
+
 
 class ContactDetails extends Component {
     state = { contact: null }
 
     async componentDidMount() {
-        const contact = await ContactService.getContactById(this.props.selectedContactId);
+        console.log(this.props)
+        const contact = await ContactService.getContactById(this.props.contactId);
         this.setState({ contact });
-        console.log(this.state.contact)
     }
 
-    render(){
+        render(){
         const { contact } = this.state;
         return(
             contact &&(
@@ -19,7 +21,7 @@ class ContactDetails extends Component {
                 <h2>{contact.email}</h2>
                 <h3>{contact.phone}</h3>
                 <img src={`https://robohash.org/${contact.name}.png`} alt="profile" />
-                <button onClick={this.props.onClose}>Back</button>
+                <Link to="/contact">Back</Link>
               </section>
 
             )

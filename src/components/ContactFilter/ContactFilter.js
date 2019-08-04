@@ -6,7 +6,7 @@ class ContactFilter extends React.Component {
     render() {
         return (
             <div>
-                <input type="text" className="search-box" value={this.props.filterBy.term} onChange={this.props.handleChangeTxt} placeholder="search contact..." />
+                <input type="text" className="search-box" value={this.props.filterBy.term} onChange={this.props.handleChangeTxt} placeholder="Search contact..." />
             </div>
         );
     }
